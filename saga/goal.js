@@ -81,7 +81,7 @@ async function initAPI(data) {
 function* initGoals(action) {
   try {
     const response = yield call(initAPI, action.data);
-    if (response && response.data.type == "success" && response.data.data.tag) {
+    if (response && response.data.type == "success") {
       yield put({
         type: reducer.GOAL_INIT_SUCCESS,
         data: response.data.data,

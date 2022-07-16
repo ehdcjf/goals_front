@@ -144,10 +144,14 @@ const reducer = (state = initialState, action) => {
     }
 
     case GOAL_INIT_SUCCESS: {
+      let tagList = [];
+      if (action.data.tag) {
+        tagList = action.data.tag;
+      }
       return {
         ...state,
         goals: [...state.goals, ...action.data.list],
-        tags: action.data.tag,
+        tags: tagList,
         totalSize: action.data.totalSize,
         isLoading: false,
       };

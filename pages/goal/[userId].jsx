@@ -258,6 +258,7 @@ const Goal = () => {
 
   const handleCreateModal = () => {
     setGoal({
+      ...goal,
       goalId: null,
       name: [],
       nameError: false,
@@ -471,7 +472,7 @@ const Goal = () => {
     if (goal.nameError && goal.name != "") {
       setGoal({ ...goal, nameError: false, nameHelperText: "" });
     }
-  }, [goal.name]);
+  }, [goal]);
 
   //alert Message
   useEffect(() => {
@@ -578,24 +579,29 @@ const Goal = () => {
               </Select>
             </Grid>
 
-            <Grid item xs={12}>
-              <InputLabel id="demo-multiple-chip-label">Tag</InputLabel>
-
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-                {tags.tag.map((value) => (
-                  <IconButton
-                    onClick={() => updateSearchTag(value)}
-                    key={value}
-                  >
-                    <Chip
+            {tags.tag.length > 0 ? (
+              <Grid item xs={12}>
+                <InputLabel id="demo-multiple-chip-label">Tag</InputLabel>
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                  {tags.tag.map((value) => (
+                    <IconButton
+                      onClick={() => updateSearchTag(value)}
                       key={value}
-                      label={value}
-                      color={search.tag.includes(value) ? "primary" : "default"}
-                    />
-                  </IconButton>
-                ))}
-              </Box>
-            </Grid>
+                    >
+                      <Chip
+                        key={value}
+                        label={value}
+                        color={
+                          search.tag.includes(value) ? "primary" : "default"
+                        }
+                      />
+                    </IconButton>
+                  ))}
+                </Box>
+              </Grid>
+            ) : (
+              <></>
+            )}
             <Grid item xs={12}>
               <Grid container flexDirection="row" justifyContent="flex-end">
                 <Button color="success" onClick={searchGoal}>

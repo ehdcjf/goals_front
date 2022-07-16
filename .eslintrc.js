@@ -4,7 +4,7 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: "next",
+  extends: "next/core-web-vitals",
 
   rules: {},
 };
