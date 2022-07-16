@@ -7,7 +7,7 @@ const initialState = {
     code: null,
     message: null,
   },
-  tags: { tag: [] },
+  tags: { tag: [], owner: null },
   goals: [],
   totalSize: null,
 };
@@ -144,14 +144,11 @@ const reducer = (state = initialState, action) => {
     }
 
     case GOAL_INIT_SUCCESS: {
-      let tagList = [];
-      if (action.data.tag) {
-        tagList = action.data.tag;
-      }
+      console.log(action.data);
       return {
         ...state,
         goals: [...state.goals, ...action.data.list],
-        tags: tagList,
+        tags: action.data.tag,
         totalSize: action.data.totalSize,
         isLoading: false,
       };

@@ -82,6 +82,12 @@ function* initGoals(action) {
   try {
     const response = yield call(initAPI, action.data);
     if (response && response.data.type == "success") {
+      console.log("xxxxxxxxxxx");
+      console.log(response.data.data);
+      console.log("xxxxxxxxxxx");
+      if (response.data.data.tag == undefined) {
+        response.data.data.tag = { owner: action.data.userId, tag: [] };
+      }
       yield put({
         type: reducer.GOAL_INIT_SUCCESS,
         data: response.data.data,

@@ -162,6 +162,7 @@ const Goal = () => {
   const dispatch = useDispatch();
   const { isLoading, isError, action, tags, goals, totalSize, isAlien } =
     useSelector((state) => state.goal);
+  console.log(tags);
   const { IsLogin, user, token } = useSelector((state) => state.user);
   const router = Router.useRouter();
   const { userId } = router.query;
@@ -579,7 +580,7 @@ const Goal = () => {
               </Select>
             </Grid>
 
-            {tags.tag.length > 0 ? (
+            {tags && tags.tag.length > 0 ? (
               <Grid item xs={12}>
                 <InputLabel id="demo-multiple-chip-label">Tag</InputLabel>
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
