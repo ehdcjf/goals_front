@@ -583,7 +583,10 @@ const Goal = () => {
 
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                 {tags.tag.map((value) => (
-                  <IconButton onClick={() => updateSearchTag(value)}>
+                  <IconButton
+                    onClick={() => updateSearchTag(value)}
+                    key={value}
+                  >
                     <Chip
                       key={value}
                       label={value}
