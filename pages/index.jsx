@@ -190,7 +190,7 @@ export default function Home() {
           <Typography variant="h6">
             프로젝트 산출물:
             <Link href="/goal/ehdcjf" underline="hover">
-              http://3.37.130.205/goal/ehdcjf
+              http://3.35.121.149/goal/ehdcjf
             </Link>
           </Typography>
         </Box>
