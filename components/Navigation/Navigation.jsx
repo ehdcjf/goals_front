@@ -32,14 +32,17 @@ const Navigation = () => {
             href="/"
           >
             <FlagCircleIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Cheolog
-          </Typography>
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          ></Typography>
           <Stack direction="row" spacing={2}>
             {IsLogin ? (
               <>
-                <IconButton color="inherit" href={`/goal/${user.id}`}>
+                <IconButton color="inherit" href={`/condition/${user.id}`}>
                   <AccountCircleIcon />
                   {user.name}
                 </IconButton>

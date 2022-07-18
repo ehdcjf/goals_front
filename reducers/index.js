@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import user from "./user";
 
 import goal from "./goal";
+import condition from "./condition";
 
 // const rootReducer = combineReducers({
 //     index: (state = {}, action) => {
@@ -32,6 +33,7 @@ const rootReducer = (state = {}, action) => {
       const combineReducer = combineReducers({
         user,
         goal,
+        condition,
       });
       return combineReducer(state, action);
     }

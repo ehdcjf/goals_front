@@ -187,10 +187,17 @@ export default function Home() {
         </Box>
 
         <Box>
-          <Typography variant="h6">
-            프로젝트 산출물:
+          <Typography variant="h6" paddingBottom={5}>
+            프로젝트 1차 산출물:
             <Link href="/goal/ehdcjf" underline="hover">
               http://3.35.121.149/goal/ehdcjf
+            </Link>
+          </Typography>
+          goal로 만들었는데 뭔가 마음에 안들어서 condition으로 바꿈
+          <Typography variant="h6">
+            프로젝트 2차 산출물:
+            <Link href="/condition/ehdcjf" underline="hover">
+              http://3.35.121.149/condition/ehdcjf
             </Link>
           </Typography>
         </Box>
