@@ -42,7 +42,6 @@ function* createGoal(action) {
 }
 
 async function fetchAPI(data) {
-  console.log(data);
   const userId = data.userId;
   const params = data;
   delete params.userId;
@@ -82,9 +81,6 @@ function* initGoals(action) {
   try {
     const response = yield call(initAPI, action.data);
     if (response && response.data.type == "success") {
-      console.log("xxxxxxxxxxx");
-      console.log(response.data.data);
-      console.log("xxxxxxxxxxx");
       if (response.data.data.tag == undefined) {
         response.data.data.tag = { owner: action.data.userId, tag: [] };
       }

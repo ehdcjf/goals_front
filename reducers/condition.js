@@ -88,7 +88,6 @@ const reducer = (state = initialState, action) => {
     case CONDITION_ADD_SUCCESS: {
       const conditions = [...state.conditions];
       conditions.unshift({ ...action.data, new: true });
-      conditions.pop();
       return {
         ...state,
         conditions: conditions,

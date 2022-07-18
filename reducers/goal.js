@@ -144,7 +144,6 @@ const reducer = (state = initialState, action) => {
     }
 
     case GOAL_INIT_SUCCESS: {
-      console.log(action.data);
       return {
         ...state,
         goals: [...state.goals, ...action.data.list],

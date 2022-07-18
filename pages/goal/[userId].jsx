@@ -162,7 +162,6 @@ const Goal = () => {
   const dispatch = useDispatch();
   const { isLoading, isError, action, tags, goals, totalSize, isAlien } =
     useSelector((state) => state.goal);
-  console.log(tags);
   const { IsLogin, user, token } = useSelector((state) => state.user);
   const router = Router.useRouter();
   const { userId } = router.query;

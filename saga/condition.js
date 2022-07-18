@@ -34,7 +34,6 @@ function* createCondition(action) {
       });
     }
   } catch (err) {
-    console.log(err);
     yield put({
       type: reducer.CONDITION_ADD_ERROR,
     });
