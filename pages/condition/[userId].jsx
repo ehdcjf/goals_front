@@ -362,7 +362,13 @@ const Condition = () => {
 
   useEffect(() => {
     if (userId != undefined) {
-      const data = { page: page, rows: rows, userId: userId, ...sort };
+      const data = {
+        page: page,
+        rows: rows,
+        userId: userId,
+        sort: "update",
+        order: -1,
+      };
 
       dispatch(ConditionFetchRequest(data));
     }
